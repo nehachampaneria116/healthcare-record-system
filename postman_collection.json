@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "56713d19-d728-4ef0-bb26-53961b34ba28",
+		"name": "sarvadhi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17787253"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomFirstName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Neha@1234\",\r\n    \"role\": \"doctor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8000/users/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"Johnathon_Davis17@yahoo.com\",\r\n    \"password\": \"Neha@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8000/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Get ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksInJvbGUiOiJkb2N0b3IiLCJpYXQiOjE3MTg5NjgyMTZ9.lungFf9hbcmQifY8rm4yCXNzMCBx0yG6kaU-68MVGc0"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8000/users/profile"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "patients",
+			"item": [
+				{
+					"name": "Add patients",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImlhdCI6MTcxODk0NzUwNH0.wgl3QdbfVOZQGE6r8o378R2PdFpmildiVwfrcTJ36j4"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"neha\",\r\n    \"lastName\":\"champaneria\",\r\n    \"dob\" :\"2024-02-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8000/patients"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImlhdCI6MTcxODk0NzUwNH0.wgl3QdbfVOZQGE6r8o378R2PdFpmildiVwfrcTJ36j4"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/patients",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"patients"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImlhdCI6MTcxODk0NzUwNH0.wgl3QdbfVOZQGE6r8o378R2PdFpmildiVwfrcTJ36j4"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8000/patients/100"
+					},
+					"response": []
+				},
+				{
+					"name": "Update patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImlhdCI6MTcxODk0NzUwNH0.wgl3QdbfVOZQGE6r8o378R2PdFpmildiVwfrcTJ36j4"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"neha\",\r\n    \"lastName\": \"chaeria\",\r\n    \"dob\": \"2024-02-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8000/patients/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImlhdCI6MTcxODk0NzUwNH0.wgl3QdbfVOZQGE6r8o378R2PdFpmildiVwfrcTJ36j4"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8000/patients/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "medical record",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksInJvbGUiOiJkb2N0b3IiLCJpYXQiOjE3MTg5NjgyMTZ9.lungFf9hbcmQifY8rm4yCXNzMCBx0yG6kaU-68MVGc0"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/EbitWEB034/Downloads/download (6).jpg"
+								}
+							]
+						},
+						"url": "localhost:8000/patients/3/medicalData"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImlhdCI6MTcxODk0NzUwNH0.wgl3QdbfVOZQGE6r8o378R2PdFpmildiVwfrcTJ36j4"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8000/patients/3/medicalData"
+					},
+					"response": []
+				},
+				{
+					"name": "Get record",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImlhdCI6MTcxODk0NzUwNH0.wgl3QdbfVOZQGE6r8o378R2PdFpmildiVwfrcTJ36j4"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8000/patients/4/medicalData/7"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete record",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImlhdCI6MTcxODk0NzUwNH0.wgl3QdbfVOZQGE6r8o378R2PdFpmildiVwfrcTJ36j4"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8000/patients/4/medicalData/8"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
